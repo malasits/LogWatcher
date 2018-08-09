@@ -1,0 +1,41 @@
+﻿<Window x:Class="LogWatcher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LogWatcher"
+        mc:Ignorable="d"
+        Title="Log Watcher" Name="MainScreen" Height="450" Width="800" WindowStyle="ThreeDBorderWindow" WindowState="Maximized" MinWidth="800" MinHeight="600">
+    <Grid ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Menü gombok-->
+        <Menu>
+            <MenuItem Header="Fájl" Padding="2">
+                <MenuItem Header="Dokumentum hozzáadása" Click="MenuItem_Click_1"></MenuItem>
+                <MenuItem Header="Jelenlegi dokumentumok eltávolítása"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Csoportok">
+                <MenuItem Header="Jelenlegi fájlok csoportba rendezése"></MenuItem>
+                <MenuItem Header="Log csoport létrehozása"></MenuItem>
+                <MenuItem Header="Csoportok szerkesztése"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Műveletek">
+                <MenuItem Header="Keresés"></MenuItem>
+                <MenuItem Header="Összehasonlítás"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Kilépés">
+                <MenuItem Header="Bezár" Click="MenuItem_Click" ></MenuItem>
+            </MenuItem>
+        </Menu>
+        
+        <!--Header-->
+        
+        <!--Body-->
+        <WrapPanel Grid.Row="2" Name="MainBodyPanel"></WrapPanel>
+    </Grid>
+</Window>
