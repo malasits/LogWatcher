@@ -9,33 +9,29 @@
     <Grid ShowGridLines="False">
         <Grid.RowDefinitions>
             <RowDefinition Height="23"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="10"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="150"/>
         </Grid.RowDefinitions>
 
-        <!--Menü gombok-->
-        <Menu>
-            <MenuItem Header="Fájl" Padding="2">
-                <MenuItem Header="Dokumentum hozzáadása" Click="MenuItem_Click_1"></MenuItem>
-                <MenuItem Header="Jelenlegi dokumentumok eltávolítása"></MenuItem>
-            </MenuItem>
-            <MenuItem Header="Csoportok">
-                <MenuItem Header="Jelenlegi fájlok csoportba rendezése"></MenuItem>
-                <MenuItem Header="Log csoport létrehozása"></MenuItem>
-                <MenuItem Header="Csoportok szerkesztése"></MenuItem>
-            </MenuItem>
-            <MenuItem Header="Műveletek">
-                <MenuItem Header="Keresés"></MenuItem>
-                <MenuItem Header="Összehasonlítás"></MenuItem>
-            </MenuItem>
-            <MenuItem Header="Kilépés">
-                <MenuItem Header="Bezár" Click="MenuItem_Click" ></MenuItem>
-            </MenuItem>
-        </Menu>
-        
-        <!--Header-->
-        
-        <!--Body-->
-        <WrapPanel Grid.Row="2" Name="MainBodyPanel"></WrapPanel>
+        <TabControl Height="auto"  Width="auto"  Grid.Row="2">
+            <TabItem Header="TesztTab_1">
+                
+                <ScrollViewer Name="scrollViewer" CanContentScroll="True">
+                    
+                    <ListView Name="lvTeszt" ItemsSource="{Binding}" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}"/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </ScrollViewer>
+                
+            </TabItem>
+        </TabControl>
+        <GridSplitter Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="auto" Height="2"/>
+
     </Grid>
 </Window>
