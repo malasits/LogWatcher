@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LogWatcher"
         mc:Ignorable="d"
-        Title="Log Watcher" Name="MainScreen" Height="450" Width="800" WindowStyle="ThreeDBorderWindow" WindowState="Maximized" MinWidth="800" MinHeight="600">
+        Title="Log Watcher Example" Name="MainScreen" Height="450" Width="800" WindowStyle="ThreeDBorderWindow" WindowState="Maximized" MinWidth="800" MinHeight="600">
     <Grid ShowGridLines="False">
         <Grid.RowDefinitions>
             <RowDefinition Height="23"/>
@@ -16,10 +16,10 @@
 
         <TabControl Height="auto"  Width="auto"  Grid.Row="2">
             <TabItem Header="TesztTab_1">
-                
-                <ScrollViewer Name="scrollViewer" CanContentScroll="True">
-                    
-                    <ListView Name="lvTeszt" ItemsSource="{Binding}" >
+
+                <ScrollViewer Name="scrollViewer" CanContentScroll="True" PreviewMouseWheel="ScrollViewer_PreviewMouseWheel" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+
+                    <ListView Name="lvTeszt" ItemsSource="{Binding}"  SelectionMode="Extended">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding}"/>
@@ -28,8 +28,9 @@
                     </ListView>
 
                 </ScrollViewer>
-                
+
             </TabItem>
+
         </TabControl>
         <GridSplitter Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="auto" Height="2"/>
 

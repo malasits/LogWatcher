@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-G:\Programing\C#\LogWatcher\LogWatcher\LogWatcher\obj\Debug\
+D:\Projects\LogWatcher\LogWatcher\obj\Debug\
 LogWatcher
 none
 false
 DEBUG;TRACE
-G:\Programing\C#\LogWatcher\LogWatcher\LogWatcher\App.xaml
+D:\Projects\LogWatcher\LogWatcher\App.xaml
 11151548125
 
-10-1805892722
-14-1500410921
+61205876261
+142042353106
 MainWindow.xaml;
 
-True
+False
 

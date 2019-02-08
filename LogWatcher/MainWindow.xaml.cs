@@ -36,15 +36,18 @@ namespace LogWatcher
             InitializeComponent();
             Log.Info(string.Format("Alkalmazás elindítva"));
 
-            var data = new FileReader(@"G:\Programing\Log\BekisziteIgenyles.log");
+            var data = new FileReader(@"D:\Projects\BekisziteIgenyles.log");
             var dataList = data.getLogFileData();
-            lvTeszt.ItemsSource = dataList.Skip(Math.Max(0, dataList.Count() - 2000));
-            //lbTeszt.ItemsSource = dataList.Skip(Math.Max(0, dataList.Count() - 2000));
 
-            //lbTeszt.SelectedIndex = lbTeszt.Items.Count - 1;
-            //lbTeszt.SelectedIndex = -1;
+            lvTeszt.ItemsSource = dataList.Skip(Math.Max(0, dataList.Count() - 1000));
             scrollViewer.ScrollToBottom();
+        }
 
+        private void ScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            ScrollViewer scv = (ScrollViewer)sender;
+            scv.ScrollToVerticalOffset(scv.VerticalOffset - e.Delta);
+            e.Handled = true;
         }
     }
 }
